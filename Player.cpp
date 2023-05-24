@@ -3,15 +3,20 @@
 
 Player::Player(int posX, int posY, int speedX, int speedY, int radius)
 {
+
 	posX_ = posX;
 	posY_ = posY;
 	speedX_ = speedX;
 	speedY_ = speedY;
 	radius_ = radius;
+	enemy = new Enemy(500, 200, 3, 40, 1);
 }
 
-void Player::Update(char* keys,char* preKeys,Bullet* bullet)
+void Player::Update(char* keys, char* preKeys, Bullet* bullet)
 {
+	enemy->Update();
+
+	//移動
 	if (keys[DIK_W]) {
 		posY_ -= speedX_;
 	}
@@ -29,13 +34,17 @@ void Player::Update(char* keys,char* preKeys,Bullet* bullet)
 		bullet->SetIsShot(true);
 	}
 	if (bullet->GetIsShot() == true) {
-		
-		bullet->Update();
+
+		bullet->Update(enemy);
 
 	}
+
+
 }
 
 void Player::Draw()
 {
+	enemy->Draw();
 	Novice::DrawBox(posX_, posY_, radius_, radius_, 0.0f, WHITE, kFillModeSolid);
+
 }

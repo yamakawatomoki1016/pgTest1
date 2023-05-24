@@ -3,8 +3,9 @@
 
 class Enemy : public Object
 {
+
 public:
-	Enemy(int posX,int posY,int speedX,int radius,int hp);
+	Enemy(int posX, int posY, int speedX, int radius, int hp);
 	void Update();
 	void Draw();
 
@@ -12,5 +13,5 @@ public:
 	int GetPosY() { return posY_; }
 	int GetRadius() { return radius_; };
 	void SetHp(int Hp) { hp_ = Hp; };
-};
 
+};

@@ -5,10 +5,12 @@
 class Bullet : public Object
 {
 public:
-	Bullet(int posX,int posY,int speedY,int radius);
 
-	void Update();
+	Bullet(int posX, int posY, int speedY, int radius);
+
+	void Update(Enemy* enemy);
 	void Draw();
+
 	void SetIsShot(bool isShot) { isShot_ = isShot; }
 	bool GetIsShot() { return isShot_; }
 	int GetPosY() { return posY_; }
@@ -16,8 +18,11 @@ public:
 	int GetSpeedY() { return speedY_; }
 	void SetPosY(int posY) { posY_ = posY; }
 
-	Enemy* enemy;
-private:
-	bool isShot_ = false;
-};
 
+
+
+private:
+
+	bool isShot_ = false;
+
+};
