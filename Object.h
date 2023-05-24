@@ -1,7 +1,6 @@
 #pragma once
 class Object
 {
-
 protected:
 	int posX_;
 	int posY_;
@@ -9,6 +8,5 @@ protected:
 	int speedY_;
 	int radius_;
 	int hp_;
-
 };
 

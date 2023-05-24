@@ -3,18 +3,15 @@
 
 Player::Player(int posX, int posY, int speedX, int speedY, int radius)
 {
-
 	posX_ = posX;
 	posY_ = posY;
 	speedX_ = speedX;
 	speedY_ = speedY;
 	radius_ = radius;
-
 }
 
 void Player::Update(char* keys,char* preKeys,Bullet* bullet)
 {
-	//移動
 	if (keys[DIK_W]) {
 		posY_ -= speedX_;
 	}
@@ -36,13 +33,9 @@ void Player::Update(char* keys,char* preKeys,Bullet* bullet)
 		bullet->Update();
 
 	}
-
-
 }
 
 void Player::Draw()
 {
-
 	Novice::DrawBox(posX_, posY_, radius_, radius_, 0.0f, WHITE, kFillModeSolid);
-
 }
